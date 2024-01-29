@@ -5,8 +5,8 @@
 -- will naively move control stick until at target location
 -- TODO: allow hex instead of just s16
 
-local y_target = -10450
-local x_target = 25687
+local y_target = -7988
+local x_target = 17734
 
 dofile("lib/get_version.lua")
 
