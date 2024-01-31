@@ -1,5 +1,6 @@
 -- ??????????
 -- old script lol
+-- deprecated: use pause_buffer.lua
 memory.usememorydomain("RDRAM")
 
 local frame = 0x1FA3A0

@@ -8,11 +8,12 @@
 -- TODO update this script if I ever want to do this with other forms + weapons
 
 local addr_visual_frame = 0x1f9f80
+local addr_weapon_in_hand = "TODO" -- sorry, lazy
 if version == "J1.1" then
     addr_visual_frame = 0x1fa3a0
+    addr_weapon_in_hand = 0x4003a7
 end
 
-local addr_weapon_in_hand = 0x4003a7
 
 local animation_length = 8
 local start_frame = mainmemory.read_u32_be(addr_visual_frame)

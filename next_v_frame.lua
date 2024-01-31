@@ -2,24 +2,16 @@
 -- press specified key to get to next visual frame
 key = "RightBracket"
 
-dofile("lib/get_version.lua")
+dofile("lib/visual_frame_helpers.lua")
 
-local addr_visual_frame = 0x1f9f80
-if version == "J1.1" then
-    addr_visual_frame = 0x1fa3a0
-end
-
-toggle_frame_advance = false
+local toggle_frame_advance = false
 
 while true do
-    local visual_frame = mainmemory.read_u32_be(addr_visual_frame)
     if input.get()[key] then
         if not toggle_frame_advance then
             toggle_frame_advance = true
             client.unpause()
-            while mainmemory.read_u32_be(addr_visual_frame) == visual_frame do
-                emu.frameadvance()
-            end
+            advance_visual_frame()
             client.pause()
         end
     else
