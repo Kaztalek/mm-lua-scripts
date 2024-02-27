@@ -24,6 +24,9 @@ while true do
     mainmemory.write_u8(addr_a_visibility, 0)
 
     local seconds_remaining = 72 * 60 * 60 - seconds_since_start
+    if seconds_remaining < 0 then
+        break
+    end
     local countdown_s = seconds_remaining % 60
     local countdown_m = math.floor(seconds_remaining / 60) % 60
     local countdown_h = math.floor(seconds_remaining / 60 / 60)
