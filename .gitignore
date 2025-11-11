@@ -1,3 +1,7 @@
 *.luases
 */
 !lib/
+# keep pictographs directory, but nothing in it
+!pictographs/
+pictographs/*
+!*.gitkeep
